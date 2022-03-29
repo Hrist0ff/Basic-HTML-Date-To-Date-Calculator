@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time Difference</title>
+<!--
+<script>
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day;
+
+document.getElementById('theDate').value = today;
+var parts =today.split('-');
+
+var mydate = new Date(parts[0], parts[1] - 1, parts[2]); 
+console.log(mydate.toDateString());
+</script>
+-->
+<script>
+function Difference(date1, date2){
+		// To set two dates to two variables
+		var date1 = new Date(document.getElementById('date1').value);
+		var date2 = new Date(document.getElementById('date2').value);
+		// To calculate the time difference of two dates
+		var Difference_In_Time = date2.getTime() - date1.getTime();
+			
+		// To calculate the no. of days between two dates
+		var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+		  
+		//To display the final no. of days (result)
+		alert(Difference_In_Days + " days went since and " + Difference_In_Days * 0.00273790926 + "years");
+	}
+
+</script>
+	<meta charset=utf-8>
+</head>
+
+
+	<input type="date" id="date1" name="date1" value = "2000-01-31">
+	
+	<input type="date"  name="date2" id="date2" value = "2021-09-27">
+
+	<input type="button" onclick="Difference('date1','date2')" value="Click">
+
+	
+	
+</body>
+</html>
